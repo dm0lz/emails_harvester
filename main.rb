@@ -30,7 +30,7 @@ class EmailHarvester
   private
 
   def init_driver
-    options = Selenium::WebDriver::Chrome::Options.new(args: ['headless'])
+    options = Selenium::WebDriver::Chrome::Options.new # (args: ['headless'])
     driver = Selenium::WebDriver.for(:chrome, options: options)
     driver.manage.timeouts.script_timeout = 40 # seconds
     driver.manage.timeouts.implicit_wait = 40
@@ -124,5 +124,5 @@ class EmailHarvester
   end
 end
 
-domain = 'tf1.fr'
+domain = 'france2.fr'
 EmailHarvester.new(domain).perform
