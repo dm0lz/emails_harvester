@@ -19,7 +19,7 @@ class EmailHarvester
     @logger.info("Fetching #{links.count} results")
     results = emails_from_links(links)
     # binding.pry
-    File.write('emails.csv', results.join("\n"))
+    File.write("#{@domain}.csv", results.join("\n"))
   rescue StandardError => e
     @logger.fatal(e)
     nil
